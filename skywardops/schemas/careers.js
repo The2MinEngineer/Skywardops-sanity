@@ -10,6 +10,13 @@ export default {
       description: 'The title of the job listing',
     },
     {
+      name: '_id',
+      title: 'ID',
+      type: 'string',
+      readOnly: true,
+      hidden: true,
+    },
+    {
       name: 'type',
       title: 'Job Type',
       type: 'string',
