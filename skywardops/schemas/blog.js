@@ -57,27 +57,22 @@ export default {
     {
       name: 'links',
       title: 'Links',
-      type: 'array',
-      of: [
+      type: 'object',
+      fields: [
         {
-          type: 'object',
-          fields: [
-            {
-              name: 'label',
-              title: 'Label',
-              type: 'string',
-              validation: (Rule) => Rule.required(),
-            },
-            {
-              name: 'url',
-              title: 'URL',
-              type: 'url',
-              validation: (Rule) => Rule.required(),
-            },
-          ],
+          name: 'label',
+          title: 'Label',
+          type: 'string',
+          validation: (Rule) => Rule.required(),
+        },
+        {
+          name: 'url',
+          title: 'URL',
+          type: 'url',
+          validation: (Rule) => Rule.required(),
         },
       ],
-      description: 'Add links related to the blog post.',
+      description: 'Add a link related to the blog post.',
     },
   ],
   preview: {
