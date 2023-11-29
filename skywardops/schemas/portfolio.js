@@ -20,11 +20,47 @@ export default {
       validation: (Rule) => Rule.required(),
     },
     {
-      name: 'description',
-      title: 'Description',
+      name: 'overview',
+      title: 'Overview',
       type: 'text',
       rows: 3,
       validation: (Rule) => Rule.required(),
+    },
+    {
+      name: 'technologies',
+      title: 'Technologies Used',
+      type: 'array',
+      of: [{ type: 'string' }],
+      options: {
+        layout: 'tags',
+      },
+      validation: (Rule) => Rule.required(),
+    },
+    {
+      name: 'projectSteps',
+      title: 'Project Steps',
+      type: 'array',
+      of: [
+        {
+          type: 'object',
+          fields: [
+            { name: 'stepTitle', title: 'Step Title', type: 'string' },
+            { name: 'stepDescription', title: 'Step Description', type: 'text' },
+          ],
+        },
+      ],
+    },
+    {
+      name: 'outcomeDescription',
+      title: 'Outcome Description',
+      type: 'text',
+      rows: 3,
+      validation: (Rule) => Rule.required(),
+    },
+    {
+      name: 'projectLink',
+      title: 'Project Link',
+      type: 'url',
     },
     {
       name: 'featuredImage',
@@ -35,29 +71,12 @@ export default {
       },
       validation: (Rule) => Rule.required(),
     },
-    {
-      name: 'content',
-      title: 'Content',
-      type: 'array',
-      of: [
-        {type: 'block'},
-        {
-          type: 'image',
-          options: {hotspot: true},
-        },
-      ],
-    },
-    {
-      name: 'projectLink',
-      title: 'Project Link',
-      type: 'url',
-    },
   ],
   preview: {
     select: {
       title: 'title',
       media: 'featuredImage',
-      subtitle: 'description',
+      subtitle: 'overview',
     },
   },
-}
+};
