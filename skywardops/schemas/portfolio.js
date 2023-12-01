@@ -30,7 +30,7 @@ export default {
       name: 'technologies',
       title: 'Technologies Used',
       type: 'array',
-      of: [{ type: 'string' }],
+      of: [{type: 'string'}],
       options: {
         layout: 'tags',
       },
@@ -44,8 +44,13 @@ export default {
         {
           type: 'object',
           fields: [
-            { name: 'stepTitle', title: 'Step Title', type: 'string' },
-            { name: 'stepDescription', title: 'Step Description', type: 'text' },
+            {name: 'stepTitle', title: 'Step Title', type: 'string'},
+            {
+              name: 'stepDescriptions',
+              title: 'Step Descriptions',
+              type: 'array',
+              of: [{type: 'text'}],
+            },
           ],
         },
       ],
@@ -79,4 +84,4 @@ export default {
       subtitle: 'overview',
     },
   },
-};
+}
